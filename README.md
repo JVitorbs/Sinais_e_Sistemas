@@ -159,7 +159,7 @@ python dft_saida.py
 Os gráficos de amplitude e fase serão exibidos diretamente na tela, caso haja problema na execução do código, pode acessar meu Colab no final desse `README.md`.
 
 ---
-# Problemas possíveis
+## ⚠️ Problemas possíveis
 Existem problemas que podem ocorrer caso rode localmente, um deles é:
 
 ```bash
