@@ -200,12 +200,12 @@ Em vez de `plt.show()`.
 DFT_FFT_Project/
 ├── README.md            # Documentação do projeto
 ├── requirements.txt     # Lista de dependências (numpy, matplotlib)
-├── codigos/              # Código principal com as funções DFT e FFT e exemplos
+├── codigos/             # Código principal com as funções DFT e FFT
     ├── dft_completo.py
     ├── dft_fft.py
     ├── dft_saida.py
     └── dft_vandermonde.y
-└── outputs/             # Imagens e resultados gerados (opcional)
+└── outputs/             # Imagens e resultados gerados
     ├── FFT_N8_amplitude.png
     ├── FFT_N8_phase.png
     ├── FFT_N16_amplitude.png
