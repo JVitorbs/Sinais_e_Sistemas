@@ -132,7 +132,13 @@ plot_spectra(X16_fft, 16, "FFT_N16")
 
 ## ⚙️ Requisitos
 
-Instale as bibliotecas necessárias com:
+Com o arquivo `requirements.txt` na pasta em que estão os códigos, instale as bibliotecas necessárias com um simples comando:
+
+```bash
+pip install -r requirements.txt
+```
+
+Outra opção é digitar diretamente no terminal sem ter o arquivo `requirements.txt`:
 
 ```bash
 pip install numpy matplotlib
@@ -142,14 +148,15 @@ pip install numpy matplotlib
 
 ## ▶️ Como Executar
 
-1. Salve o código em um arquivo chamado `main.py`
-2. Execute no terminal:
+1. Salve os códigos em dois arquivos chamados `dft_completo.py` e `dft_saida.py` 
+2. Execute no terminal ou na IDE:
 
 ```bash
-python main.py
+python dft_completo.py
+python dft_saida.py
 ```
 
-Os gráficos de amplitude e fase serão exibidos diretamente na tela.
+Os gráficos de amplitude e fase serão exibidos diretamente na tela, caso haja problema na execução do código, pode acessar meu Colab no final desse `README.md`.
 
 ---
 
