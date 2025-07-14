@@ -1,9 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# -----------------------------------------------------------
-# Função para gerar os gráficos de amplitude e fase de um vetor de frequência X
-# -----------------------------------------------------------
+# Função para gerar os gráficos de amplitude e fase
 def plot_spectra(X, N, title_prefix):
     k = np.arange(N)
     amplitude = np.abs(X)
@@ -17,7 +15,9 @@ def plot_spectra(X, N, title_prefix):
     plt.ylabel('|X[k]|')
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+    # amp_path = f'/mnt/data/{title_prefix}_amplitude.png' # commented out to avoid permission errors
+    # plt.savefig(amp_path) # commented out to avoid permission errors
+    plt.show() # added show to display plots directly
     plt.close()
 
     # Gráfico do espectro de fase
@@ -28,59 +28,50 @@ def plot_spectra(X, N, title_prefix):
     plt.ylabel('∠X[k]')
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+    # phase_path = f'/mnt/data/{title_prefix}_fase.png' # commented out to avoid permission errors
+    # plt.savefig(phase_path) # commented out to avoid permission errors
+    plt.show() # added show to display plots directly
     plt.close()
 
-    # Como os gráficos não estão sendo salvos, retornamos None
-    return None, None
+    # return amp_path, phase_path # commented out as saving is commented out
+    return None, None # return None for paths as saving is commented out
 
 
-# -----------------------------------------------------------
-# QUESTÃO 1 - DFT usando matriz de Vandermonde
-# -----------------------------------------------------------
+# ---------- QUESTÃO 1 - MATRIZ DE VANDERMONDE ----------
+
 def dft_vandermonde(x):
     N = len(x)
     n = np.arange(N)
     k = n.reshape((N, 1))
-    
-    # Construção da matriz de Vandermonde complexa
-    W = np.exp(-2j * np.pi * k * n / N)
-    
-    # Cálculo da DFT via multiplicação de matrizes
+    W = np.exp(-2j * np.pi * k * n / N)  # matriz de Vandermonde
     X = np.dot(W, x)
     return X
 
-# Teste com N = 8
+# Teste para N=8
 x8 = np.array([1, 2, 3, 4, 4, 3, 2, 1])
 X8_vand = dft_vandermonde(x8)
 path_amp_8, path_phase_8 = plot_spectra(X8_vand, 8, "Vandermonde_N8")
 
-# Teste com N = 16 (sinal cossenoidal)
-n16 = np.arange(16)
+# Teste para N=16
+n16 = np.arange(16) # n = {0, . . . , 15}
 x16 = np.cos(np.pi * n16 / 4)
 X16_vand = dft_vandermonde(x16)
 path_amp_16, path_phase_16 = plot_spectra(X16_vand, 16, "Vandermonde_N16")
 
+# ---------- QUESTÃO 2 - FFT ----------
 
-# -----------------------------------------------------------
-# QUESTÃO 2 - DFT usando FFT da biblioteca NumPy
-# -----------------------------------------------------------
 def dft_fft(x):
     return np.fft.fft(x)
 
-# FFT com N = 8
-X8_fft = dft_fft(x8)
+# FFT para N=8
+X8_fft = dft_fft(x8) # Usando o mesmo array de antes e mesmo tamanho
 path_fft_amp_8, path_fft_phase_8 = plot_spectra(X8_fft, 8, "FFT_N8")
 
-# FFT com N = 16
-X16_fft = dft_fft(x16)
+# FFT para N=16
+X16_fft = dft_fft(x16) # Usando o mesmo cosseno de antes e mesmo tamanho
 path_fft_amp_16, path_fft_phase_16 = plot_spectra(X16_fft, 16, "FFT_N16")
 
-
-# -----------------------------------------------------------
-# Estrutura para retornar os caminhos (ou None) dos gráficos
-# Útil para LaTeX ou relatórios posteriores
-# -----------------------------------------------------------
+# Retornar caminhos para LaTeX - fiz isso para importar diretamente no overleaf
 {
     "vandermonde": {
         "N8": {"amp": path_amp_8, "fase": path_phase_8},
