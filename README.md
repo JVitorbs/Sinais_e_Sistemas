@@ -205,7 +205,7 @@ DFT_FFT_Project/
     ├── dft_fft.py
     ├── dft_saida.py
     └── dft_vandermonde.y
-└── outputs/             # Imagens e resultados gerados
+└── imagens/             # Imagens e resultados gerados
     ├── FFT_N8_amplitude.png
     ├── FFT_N8_phase.png
     ├── FFT_N16_amplitude.png
