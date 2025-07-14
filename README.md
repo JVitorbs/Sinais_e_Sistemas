@@ -135,7 +135,7 @@ plot_spectra(X16_fft, 16, "FFT_N16")
 Com o arquivo `requirements.txt` na pasta em que estão os códigos, instale as bibliotecas necessárias com um simples comando:
 
 ```bash
-pip install -r requirements.txt
+pip install -r codigos/requirements.txt
 ```
 
 Outra opção é digitar diretamente no terminal sem ter o arquivo `requirements.txt`:
@@ -197,10 +197,10 @@ Em vez de `plt.show()`.
 ## Estrutura de Arquivos do Projeto
 
 ```plaintext
-DFT_FFT_Project/
+Sinais_e_Sistemas/
 ├── README.md            # Documentação do projeto
-├── requirements.txt     # Lista de dependências (numpy, matplotlib)
 ├── codigos/             # Código principal com as funções DFT e FFT
+    ├── requirements.txt     # Lista de dependências (numpy, matplotlib)
     ├── dft_completo.py
     ├── dft_fft.py
     ├── dft_saida.py
@@ -214,6 +214,12 @@ DFT_FFT_Project/
     ├── Vandermonde_N8_phase.png
     ├── Vandermonde_N16_amplitude.png
     └── Vandermonde_N16_phase.png
+└── Joao_Vitor_Batista_Silva_Sinais_e_Sistemas.pdf            # Relatório em .PDF
+└── relatorio_tex.zip     # Relatório TEX completo em .ZIP
+└── relatorio_tex/        # Diretório com os arquivos do TEX completo
+    ├── main.tex
+    ├── codigos/
+    └── imagens/
 ```
 
 ---
