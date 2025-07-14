@@ -159,6 +159,18 @@ python dft_saida.py
 Os gráficos de amplitude e fase serão exibidos diretamente na tela, caso haja problema na execução do código, pode acessar meu Colab no final desse `README.md`.
 
 ---
+# Problemas possíveis
+Existem problemas que podem ocorrer caso rode localmente, um deles é:
+
+```bash
+UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+plt.show() # added show to display plots directly
+```
+Isso significa que você está tentando usar plt.show() em um ambiente que não tem interface gráfica, como o terminal sem suporte a GUI (por exemplo, se estiver rodando via SSH, WSL ou só no terminal do Ubuntu sem um ambiente de desktop ativo).
+
+Caso isso ocorra uma opção simples é usar o google Colab.
+
+---
 
 ## 💾 Salvamento de Imagens (Opcional)
 
